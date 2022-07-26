@@ -1,0 +1,82 @@
+<nav class="tema_base sombras sticky-top">
+    <!-- fixed-top -->
+  
+    <div class="container-fluid">
+      <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between">
+        <a href="/#" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 py-1">
+          <img
+            src="assets\navbar\logo_white.png"
+            alt=""
+            width="170"
+            height="40"
+          />
+        </a>
+  
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <!--      <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>  -->
+          <li>
+            <a href="mailto:panelomartinn@hotmail.com" id="text_nav" class="nav-link  tema_base">
+              <img
+                src="assets\navbar\Outlook_black.png"
+                class="bi d-block mx-auto mb-0"
+                width="25"
+                height="25"
+              />
+              Outlook
+            </a>
+          </li>
+          <li>
+            <a href="mailto:panelomartinn@gmail.com" id="text_nav" class="nav-link tema_base">
+              <img
+                src="assets\navbar\Google_black.png"
+                class="bi d-block mx-auto mb-0"
+                width="25"
+                height="25"
+              />
+              Gmail
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/MartinPanelo" id="text_nav" class="nav-link tema_base">
+              <img
+                src="assets\navbar\Github_black.png"
+                class="d-block mx-auto mb-0"
+                width="25"
+                height="25"
+              />
+              Github
+            </a>
+          </li>
+        </ul>
+  
+        <div class="col-md-3 text-end">
+
+
+  
+          <button type="button " class="btn tema_base btn-warning" (click)="login()" *ngIf="!islogged">
+            Iniciar sesion
+            <img
+              src="assets\navbar\login.png"
+              class="bi mx-auto"
+              width="25"
+              height="30"
+            />
+          </button>
+          <button  type="button " class="btn tema_base btn-warning" (click)="onLogOut()" *ngIf="islogged">
+            Cerrar sesion
+            <img
+              src="assets\navbar\login.png"
+              class="bi mx-auto"
+              width="25"
+              height="30"
+            />
+          </button>
+        </div>
+      </header>
+    </div>
+  </nav>
+  <!--
+  
+  -->
+  

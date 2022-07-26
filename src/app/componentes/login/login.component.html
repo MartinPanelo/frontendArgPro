@@ -1,0 +1,41 @@
+<section class="gradient-custom">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center align-items-center mx-0">
+      <div class="row mx-0 my-3 card-type-7">
+        <div class="col d-flex mx-0 my-3 justify-content-center">
+          <div class="card-type-8 text-black" style="border-radius: 1rem">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-3 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                <p class="text-white-50 mb-3">
+                  ingrese sus credenciales para acceder al portfolio
+                </p>
+
+
+                <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+
+                  
+                <div class="form-outline form-white mb-4">                  
+                  <input type="email" id="nombreUsuario" name="nombreUsuario" class="form-control form-control-lg" [(ngModel)]="nombreUsuario" required/>
+                  <label class="form-label" for="nombreUsuario">Usuario</label>
+                </div>
+
+                <div class="form-outline form-white mb-4">                 
+                  <input type="password" id="password" name="password" class="form-control form-control-lg" [(ngModel)]="password" required/>
+                  <label class="form-label" for="password">contrasenia</label>
+                </div>
+
+                <button class="btn btn-outline-light btn-lg px-5" type="submit">
+                  Login
+                </button>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

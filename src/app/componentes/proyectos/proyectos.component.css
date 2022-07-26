@@ -1,0 +1,6 @@
+.scrolling-wrapper{
+	overflow-x: auto;
+}
+.select_item:hover{
+    transform: translateY(-10px);
+}

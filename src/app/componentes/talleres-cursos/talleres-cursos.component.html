@@ -1,0 +1,189 @@
+<div class=" container-fluid ">
+    
+    <div class="row mx-auto card-type-4 tema_base">
+
+        <div class="row mx-auto mt-3 justify-content-between">
+
+            <div class="col-2 card-type-2 " >               
+                <P  class="centrar_texto">Talleres y cursos</P>            
+            </div> 
+
+
+        </div>
+
+         
+      
+       
+  
+
+
+       
+      
+
+
+        <ul>
+         
+            <li  *ngFor="let itemtallercursor of tallercurso ;let indice = index">
+                
+
+
+                <div class="row mx-auto my-3 d-flex justify-content-between align-items-center">
+                
+                    <div class="col-8 card-type-2  ">
+                        <P>{{itemtallercursor.tipocapacitacion}} : "{{itemtallercursor.nombre}}"</P>
+                        <P>{{itemtallercursor.ubicacion}}</P>
+                        <P>Carga Horaria : {{itemtallercursor.cargahoraria}}</P>
+                        <P>{{itemtallercursor.detalle1}}</P>
+                        <P>{{itemtallercursor.detalle2}}</P>
+                        
+                     
+                       
+                                
+                
+                    </div>
+                    <div class="col-2 card-type-2 ">
+                        <div class="my-3 border border-success  border-4"> <img class="" [src]="itemtallercursor.logo" alt="" width="100%" height="100% "></div>
+                    </div>
+                
+                  
+                
+                
+                
+                    <div class="col-1 text-center  mx-3">
+
+                     
+             
+                        <button class="btnk icons" (click)="tipodemodal(indice)" data-bs-toggle="modal" data-bs-target="#modaltallerycurso" *ngIf="islogged">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                class=" bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                            </svg>
+                        </button>
+                     
+                  
+                        <button  class="btnk  icons  mx-1" (click)="borraritem(itemtallercursor.id)" *ngIf="islogged">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                            </svg>
+                        </button>
+                
+                
+                    </div>
+                
+                
+                </div>
+                
+                </li>
+                
+                <div class="row mx-auto mt-3 justify-content-center">
+                <div class="col-1 d-flex justify-content-center " >
+                <p class="pp">
+                  <button class="btnk icons" (click)="tipodemodal(-1)" data-bs-target="#modaltallerycurso"  data-bs-toggle="modal"  data-bs-dismiss="modal" *ngIf="islogged">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                      class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                      <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+                      </svg>
+                  
+                </button></p>
+                
+                </div>
+                </div>
+              
+        </ul>
+         
+
+    </div>
+     
+       
+        
+        
+
+    </div>
+
+
+<!--
+<div class="">  <img class="" src="assets\acerca_de\foto_perfil.png" alt="" width="100" height="100"></div>
+
+-->
+
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-md "   id="modaltallerycurso" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Talleres y cursos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>  
+        <div class="modal-body ">         
+          <form class="form-horizontal ">
+            
+            <div class="row mt-1">
+              <label for="logo" class="col-sm-3 col-form-label">foto:</label>
+              <div class="col-sm-9   "> <!-- largo del imputs -->
+               <input type="text" class="form-control"  id="logo" name="logo" [(ngModel)]="nuevatallercurso.logo" required >
+              
+              </div>
+            </div>  
+
+          <div class="row mt-1">
+            <label for="inputPassword" class="col-sm-3 col-form-label">tipo de capacitacion:</label>
+            <div class="col-sm-9"> <!-- largo del imputs -->
+              <!--   <input type="text" class="form-control"  id="inputPassword"placeholder={{modal.ubicacion}} >  --> 
+              <input type="text" class="form-control"  id="cargahoraria" name="cargahoraria" [(ngModel)]="nuevatallercurso.tipocapacitacion" required >
+           <!--      <input type="text" class="form-control"   name="username" > --> 
+
+              
+              
+            
+            </div>
+          </div>  
+
+
+            <div class="row mt-1">
+              <label for="inputPassword" class="col-sm-3 col-form-label">nombre:</label>
+              <div class="col-sm-9"> <!-- largo del imputs -->
+                <input type="text" class="form-control"  id="nombre" name="nombre" [(ngModel)]="nuevatallercurso.nombre" required >
+              </div>            
+            </div>
+
+            <div class="row mt-1">
+              <label for="inputPassword" class="col-sm-3 col-form-label">carga horaria:</label>
+              <div class="col-sm-9"> <!-- largo del imputs -->
+                <input type="text" class="form-control"  id="cargahoraria" name="cargahoraria" [(ngModel)]="nuevatallercurso.cargahoraria" required >
+              </div>
+            </div>
+            <div class="row mt-1">
+                <label for="inputPassword" class="col-sm-3 col-form-label">ubicacion:</label>
+                <div class="col-sm-9"> <!-- largo del imputs -->
+                  <input type="text" class="form-control"  id="ubicacion" name="ubicacion" [(ngModel)]="nuevatallercurso.ubicacion" required >
+                </div>
+              </div>
+
+
+            <div class="mb-1">
+              <label for="message-text" class="col-form-label">Detalle1:</label>
+              <textarea type="form-control" class="form-control" id="detalle1" name="detalle1" [(ngModel)]="nuevatallercurso.detalle1" required ></textarea>
+            </div>
+            <div class="mb-1">
+              <label for="message-text" class="col-form-label">Detalle2:</label>
+              <textarea type="form-control" class="form-control" id="detalle2" name="detalle2" [(ngModel)]="nuevatallercurso.detalle2" required ></textarea>
+           <!--   <textarea type="form-control" class="form-control"  name="username" ></textarea> -->
+            </div>
+           
+          </form>
+        </div>
+        <div class="modal-footer"> <!--// esto es una linea delgada asdad-->
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+
+       
+          <button type="button" (click)="validar()"  data-bs-dismiss="modal" class="btn btn-primary">Aceptar</button>
+        </div>
+       
+   
+                
+      </div>
+    </div>
+  </div> <!-- Modal -->
