@@ -194,7 +194,7 @@ export class SkillsComponent implements OnInit {
   }
 
   borraritem(i: number) {
-    console.log(i);
+   // console.log(i);
     this.skillS.borrar(i).subscribe(() => {
       this.refreshblandas = false;
       this.cargarDatosskill();
@@ -216,7 +216,7 @@ export class SkillsComponent implements OnInit {
 
       this.nuevaskill = new ModeloSkill('', '', 'true');
 
-      console.log('abri modal de creacion' + this.id);
+     // console.log('abri modal de creacion' + this.id);
     } else {
       this.nuevaskill = Object.assign({}, this.skill[opc]);
      

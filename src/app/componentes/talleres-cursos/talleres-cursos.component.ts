@@ -66,7 +66,7 @@ export class TalleresCursosComponent implements OnInit {
   }
   
   borraritem(i: number) {
-    console.log(i);
+   // console.log(i);
     this.tallercursoS.borrar(i).subscribe(() => {
       this.cargarDatosTallerCurso();
     });
@@ -87,7 +87,7 @@ export class TalleresCursosComponent implements OnInit {
 
       this.nuevatallercurso = new ModeloTallercurso("","","","","","","");
 
-      console.log('abri modal de creacion');
+     // console.log('abri modal de creacion');
 
     } else {
 
@@ -95,7 +95,7 @@ export class TalleresCursosComponent implements OnInit {
 
       this.id = this.tallercurso[opc].id;
 
-      console.log(this.nuevatallercurso.ubicacion);
+    //  console.log(this.nuevatallercurso.ubicacion);
     }
   }
 }

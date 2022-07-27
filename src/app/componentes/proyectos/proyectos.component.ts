@@ -66,7 +66,7 @@ export class ProyectosComponent implements OnInit {
   }
   
   borraritem(i: number) {
-    console.log(i);
+   // console.log(i);
     this.proyectoS.borrar(i).subscribe(() => {
       this.cargarDatosProyecto();
     });
@@ -87,12 +87,12 @@ export class ProyectosComponent implements OnInit {
 
       this.nuevaproyecto = new ModeloProyecto('', '', '', '', '');
 
-      console.log('abri modal de creacion' + this.id );
+   //   console.log('abri modal de creacion' + this.id );
 
     } else {
 
       this.nuevaproyecto = Object.assign({}, this.proyecto[opc]);
-      console.log(this.proyecto[opc].id)
+    //  console.log(this.proyecto[opc].id)
       this.id = this.proyecto[opc].id;
 
      

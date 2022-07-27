@@ -33,9 +33,8 @@
                         <P>{{itemtallercursor.tipocapacitacion}} : "{{itemtallercursor.nombre}}"</P>
                         <P>{{itemtallercursor.ubicacion}}</P>
                         <P>Carga Horaria : {{itemtallercursor.cargahoraria}}</P>
-                        <P>{{itemtallercursor.detalle1}}</P>
-                        <P>{{itemtallercursor.detalle2}}</P>
-                        
+                        <P>{{itemtallercursor.detalle1}}</P>                       
+                        <a  [href]="itemtallercursor.detalle2"> Link al proyecto</a>
                      
                        
                                 
@@ -120,7 +119,7 @@
           <form class="form-horizontal ">
             
             <div class="row mt-1">
-              <label for="logo" class="col-sm-3 col-form-label">foto:</label>
+              <label for="logo" class="col-sm-3 col-form-label">Logo:</label>
               <div class="col-sm-9   "> <!-- largo del imputs -->
                <input type="text" class="form-control"  id="logo" name="logo" [(ngModel)]="nuevatallercurso.logo" required >
               
@@ -167,7 +166,7 @@
               <textarea type="form-control" class="form-control" id="detalle1" name="detalle1" [(ngModel)]="nuevatallercurso.detalle1" required ></textarea>
             </div>
             <div class="mb-1">
-              <label for="message-text" class="col-form-label">Detalle2:</label>
+              <label for="message-text" class="col-form-label">link:</label>
               <textarea type="form-control" class="form-control" id="detalle2" name="detalle2" [(ngModel)]="nuevatallercurso.detalle2" required ></textarea>
            <!--   <textarea type="form-control" class="form-control"  name="username" ></textarea> -->
             </div>

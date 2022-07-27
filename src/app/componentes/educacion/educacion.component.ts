@@ -65,7 +65,7 @@ export class EducacionComponent implements OnInit {
   }
   
   borraritem(i: number) {
-    console.log(i);
+    //console.log(i);
     this.educacionS.borrar(i).subscribe(() => {
       this.cargarDatosEducacion();
     });
@@ -86,12 +86,12 @@ export class EducacionComponent implements OnInit {
 
       this.nuevaeducacion = new ModeloEducacion('', '', '', '', '', '');
 
-      console.log('abri modal de creacion' + this.id );
+     // console.log('abri modal de creacion' + this.id );
 
     } else {
 
       this.nuevaeducacion = Object.assign({}, this.educacion[opc]);
-      console.log(this.educacion[opc].id)
+    //  console.log(this.educacion[opc].id)
       this.id = this.educacion[opc].id;
 
      
