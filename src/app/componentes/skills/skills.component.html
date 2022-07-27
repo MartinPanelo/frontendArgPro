@@ -58,12 +58,21 @@
          
     <div class="col-5  d-flex  my-3"  >     
   <table class="table card-type-2">
+    <thead>
+      <tr>
+        <th scope="col">habilidad</th>
+        <th scope="col">valor</th>
+        <th scope="col">tipo de habilidad</th>
+        <th scope="col">acciones</th>
+      </tr>
+    </thead>
     <thead  *ngFor="let itemskill of skill ;let indice = index">
       <tr>      
-        <td>habilidad : {{itemskill.nombre}}</td>
-        <td>valor : {{itemskill.valor}}</td>       
-        <td>habilidad :{{itemskill.tipo}}</td>       
-        <td > 
+        <td>{{itemskill.nombre}}</td>
+        <td>{{itemskill.valor}}</td>       
+        <td *ngIf="itemskill.tipo == 'false' ">blanda</td>  
+        <td *ngIf="itemskill.tipo == 'true' ">dura</td>  
+        <td> 
           <button class="btnk icons"  (click)="tipodemodal(indice)" data-bs-toggle="modal" data-bs-target="#modalskill">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
               class=" bi bi-pencil-square" viewBox="0 0 16 16">

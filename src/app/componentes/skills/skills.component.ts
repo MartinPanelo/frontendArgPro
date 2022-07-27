@@ -30,6 +30,8 @@ export class SkillsComponent implements OnInit {
       },
     ],
   };
+
+
   // events
   public chartClicked({event,active,}: {event: ChartEvent;active: {}[];}): void {console.log(event, active);}
   public chartHovered({event,active,}: {event: ChartEvent;active: {}[];}): void {console.log(event, active);}
@@ -118,6 +120,9 @@ export class SkillsComponent implements OnInit {
   refescargrafico() {
     this.datosnumeroblandas.splice(0);
     this.datospalabrasblandas.splice(0);
+
+    
+
     this.datosnumeroduras.splice(0);
     this.datospalabrasduras.splice(0);
 
@@ -128,7 +133,8 @@ export class SkillsComponent implements OnInit {
       if(this.datosgrafico[i].tipo ===("true")){
 
         this.datosnumeroduras.push(this.datosgrafico[i].valor as any);
-        this.datospalabrasduras.push(this.datosgrafico[i].nombre)
+        this.datospalabrasduras.push(this.datosgrafico[i].nombre);
+        
        /*
         this.datosnumeroduras[i] = this.datosgrafico[i].valor as any;
       this.datospalabrasduras[i] = this.datosgrafico[i].nombre;
