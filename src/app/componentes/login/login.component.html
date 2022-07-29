@@ -11,26 +11,23 @@
                   ingrese sus credenciales para acceder al portfolio
                 </p>
 
-
                 <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+                  <div class="form-outline form-white mb-4">
+                    <input type="email" id="nombreUsuario" name="nombreUsuario" class="form-control form-control-lg"
+                      [(ngModel)]="nombreUsuario" required />
+                    <label class="form-label" for="nombreUsuario">Usuario</label>
+                  </div>
 
-                  
-                <div class="form-outline form-white mb-4">                  
-                  <input type="email" id="nombreUsuario" name="nombreUsuario" class="form-control form-control-lg" [(ngModel)]="nombreUsuario" required/>
-                  <label class="form-label" for="nombreUsuario">Usuario</label>
-                </div>
+                  <div class="form-outline form-white mb-4">
+                    <input type="password" id="password" name="password" class="form-control form-control-lg"
+                      [(ngModel)]="password" required />
+                    <label class="form-label" for="password">contraseña</label>
+                  </div>
 
-                <div class="form-outline form-white mb-4">                 
-                  <input type="password" id="password" name="password" class="form-control form-control-lg" [(ngModel)]="password" required/>
-                  <label class="form-label" for="password">contraseña</label>
-                </div>
-
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">
-                  Login
-                </button>
-
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit">
+                    Login
+                  </button>
                 </form>
-
               </div>
             </div>
           </div>

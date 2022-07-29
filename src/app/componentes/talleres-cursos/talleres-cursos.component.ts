@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ModeloTallercurso } from 'src/app/modelos/modelo-tallercurso';
 import { TallercursoService } from 'src/app/servicio/tallercurso.service';
 import { TokenService } from 'src/app/servicio/token.service';
@@ -7,20 +6,27 @@ import { TokenService } from 'src/app/servicio/token.service';
 @Component({
   selector: 'app-talleres-cursos',
   templateUrl: './talleres-cursos.component.html',
-  styleUrls: ['./talleres-cursos.component.css']
+  styleUrls: ['./talleres-cursos.component.css'],
 })
 export class TalleresCursosComponent implements OnInit {
- tallercurso: ModeloTallercurso[] = [];
+  tallercurso: ModeloTallercurso[] = [];
 
   //-------------------------
   acciondemodal: number;
   id: number;
 
-  nuevatallercurso: ModeloTallercurso = new ModeloTallercurso("","","","","","","");
+  nuevatallercurso: ModeloTallercurso = new ModeloTallercurso(
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
+  );
 
   constructor(
     private tallercursoS: TallercursoService,
-    private router: Router,
     private tokenService: TokenService
   ) {}
   islogged = false;
@@ -32,8 +38,6 @@ export class TalleresCursosComponent implements OnInit {
     } else {
       this.islogged = false;
     }
-
-    // this.educacionS.detail(1).subscribe(data => {this.nuevaeducacion = data})
   }
 
   cargarDatosTallerCurso(): void {
@@ -52,21 +56,18 @@ export class TalleresCursosComponent implements OnInit {
       this.nuevatallercurso.ubicacion,
       this.nuevatallercurso.logo
     );
-    this.tallercursoS.save(TC).subscribe(() => {this.cargarDatosTallerCurso();});
-
- //   this.tallercursoS.detail(this.id).subscribe((data) => {this.nuevatallercurso = data;});
+    this.tallercursoS.save(TC).subscribe(() => {
+      this.cargarDatosTallerCurso();
+    });
   }
 
   actualizarTallerCurso(): void {
-    // falta el indice
-
     this.tallercursoS.update(this.id, this.nuevatallercurso).subscribe(() => {
       this.cargarDatosTallerCurso();
     });
   }
-  
+
   borraritem(i: number) {
-   // console.log(i);
     this.tallercursoS.borrar(i).subscribe(() => {
       this.cargarDatosTallerCurso();
     });
@@ -76,7 +77,6 @@ export class TalleresCursosComponent implements OnInit {
     if (this.acciondemodal == -1) {
       this.crearDatosTallerCurso();
     } else {
-      // aca se invoca la funcion de actualizar datos
       this.actualizarTallerCurso();
     }
   }
@@ -85,17 +85,11 @@ export class TalleresCursosComponent implements OnInit {
     if (opc == -1) {
       this.acciondemodal = opc;
 
-      this.nuevatallercurso = new ModeloTallercurso("","","","","","","");
-
-     // console.log('abri modal de creacion');
-
+      this.nuevatallercurso = new ModeloTallercurso('', '', '', '', '', '', '');
     } else {
-
       this.nuevatallercurso = Object.assign({}, this.tallercurso[opc]);
 
       this.id = this.tallercurso[opc].id;
-
-    //  console.log(this.nuevatallercurso.ubicacion);
     }
   }
 }
