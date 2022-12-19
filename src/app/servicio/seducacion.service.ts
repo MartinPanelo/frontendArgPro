@@ -8,7 +8,7 @@ import { ModeloEducacion } from '../modelos/modelo-educacion';
 })
 export class SeducacionService {
 
-  URL = 'https://paneloarg.herokuapp.com/educacion/';
+  URL = 'https://backedargproprivado-production.up.railway.app/educacion/';
 
 
   constructor(private http: HttpClient) { }

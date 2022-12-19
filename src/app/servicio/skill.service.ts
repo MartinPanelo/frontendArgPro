@@ -8,7 +8,7 @@ import { ModeloSkill } from '../modelos/modelo-skill';
 })
 export class SkillService {
 
-  URL = 'https://paneloarg.herokuapp.com/skill/';
+  URL = 'https://backedargproprivado-production.up.railway.app/skill/';
 
 
   constructor(private http: HttpClient) { }

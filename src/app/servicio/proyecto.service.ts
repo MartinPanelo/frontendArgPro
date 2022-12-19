@@ -9,7 +9,7 @@ import { ModeloProyecto } from '../modelos/modelo-proyecto';
 export class ProyectoService {
 
  
-  URL = 'https://paneloarg.herokuapp.com/proyecto/';
+  URL = 'https://backedargproprivado-production.up.railway.app/proyecto/';
 
 
   constructor(private http: HttpClient) { }

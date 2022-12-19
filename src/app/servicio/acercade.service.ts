@@ -7,7 +7,7 @@ import { acercade } from '../modelos/modelo.acerca';
   providedIn: 'root',
 })
 export class AcercadeService {
-  URL = 'https://paneloarg.herokuapp.com/acerca/'; // url de la API
+  URL = 'https://backedargproprivado-production.up.railway.app/acerca/'; // url de la API
 
   constructor(private http: HttpClient) {}
 

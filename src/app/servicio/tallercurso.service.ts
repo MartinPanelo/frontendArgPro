@@ -8,7 +8,7 @@ import { ModeloTallercurso } from '../modelos/modelo-tallercurso';
 })
 export class TallercursoService {
 
-  URL = 'https://paneloarg.herokuapp.com/tallercurso/';
+  URL = 'https://backedargproprivado-production.up.railway.app/tallercurso/';
 
 
   constructor(private http: HttpClient) { }
